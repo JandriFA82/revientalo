@@ -24,7 +24,7 @@ El juego incluye distintos niveles de dificultad, un sistema de puntuación seg�
 
 Enlace a la documentación del juego:
 
-https://docs.google.com/document/d/1OmGvyN-U-nXSvOhM0QMEntReO9EfVCpvE23GT0\_7R8U/edit?usp=sharing
+[https://docs.google.com/document/d/1OmGvyN-U-nXSvOhM0QMEntReO9EfVCpvE23GT0\_7R8U/edit?usp=sharing](https://docs.google.com/document/d/1OmGvyN-U-nXSvOhM0QMEntReO9EfVCpvE23GT0_7R8U/edit?tab=t.0#heading=h.sptt0ojriez9)
 
 
 
@@ -59,7 +59,10 @@ revientalo/
 └── sounds/ # Sonidos del juego
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 1e2d1809099a0ee2a988c2fce115ecd778881df0
