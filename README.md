@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Revientalo - Juego en HTML, CSS y JavaScript
 
 
@@ -62,7 +62,4 @@ revientalo/
 
 
 
-=======
-# revientalo
-Este proyecto es una adaptación del clásico juego Duck Hunt, desarrollado con HTML, CSS y JavaScript.   El jugador deberá disparar a patos que aparecen de forma aleatoria en la pantalla utilizando el ratón, con el objetivo de conseguir la mayor puntuación posible antes de quedarse sin disparos.
->>>>>>> b01f7a3c504a656c6efab91a2d3db62e4c343497
+

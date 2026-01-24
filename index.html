@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>REVIENTALO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- MENÚ PRINCIPAL -->
+    <section id="menu" class="screen active">
+        <h1>
+        <img src="assets/images/tittle.png" alt="tittle of page">
+        </h1>
+        <div class="container">
+        <button id="btnStart">Empezar partida</button>
+        <button id="btnOptions">Opciones</button>
+        <button id="btnExit">Salir</button>
+        </div>
+    </section>
+
+    <!-- OPCIONES -->
+    <section id="options" class="screen">
+        <h2>
+            <img src="assets/images/options.png" alt="options">
+        </h2>
+
+        <div class="option">
+            <label>Dificultad:</label>
+            <select id="difficulty">
+                <option value="easy">Fácil</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Difícil</option>
+            </select>
+        </div>
+
+        <div class="option">
+            <label>
+                <input type="checkbox" id="sound" checked>
+                Sonido activado
+            </label>
+        </div>
+
+        <button id="btnBack">Volver</button>
+    </section>
+
+    <!-- JUEGO -->
+    <section id="game" class="screen">
+        <div id="hud">
+            <span>Puntos: <span id="score">0</span></span>
+            <span>Disparos: <span id="shots">25</span></span>
+        </div>
+
+        <div id="gameArea">
+            <!-- Aquí irán los patos -->
+        </div>
+
+        <button id="btnMenu">Volver al menú</button>
+    </section>
+
+    <script src="game.js"></script>
+</body>
+</html>
