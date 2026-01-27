@@ -59,10 +59,3 @@ revientalo/
 └── sounds/ # Sonidos del juego
 
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 1e2d1809099a0ee2a988c2fce115ecd778881df0
