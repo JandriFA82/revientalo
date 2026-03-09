@@ -51,25 +51,34 @@ const DUCK_SPEED = 3;
 let ducksOnScreen = 0;
 const MAX_DUCKS = 3;
 
+// cada pato, puntaje, color, velocidad
 const duckTypes = [
     {
         color: "blue",
         points: 10,
+        speed: 2,
+        turn: 0.1,
         image: "assets/images/duck_blue.png"
     },
     {
         color: "red",
         points: 20,
+        speed: 3,
+        turn: 0.15,
         image: "assets/images/duck_red.png"
     },
     {
         color: "purple",
         points: 30,
+        speed: 4,
+        turn: 0.4,
         image: "assets/images/duck_purple.png"
     },
     {
         color: "gold",
         points: 50,
+        speed: 5,
+        turn: 0.2,
         image: "assets/images/duck_gold.png"
     }
 ];
@@ -94,8 +103,8 @@ function createDuck() {
     ducksOnScreen++;
     
     // Movimiento aleatorio
-    let dx = (Math.random() * 2 - 1) * DUCK_SPEED;
-    let dy = (Math.random() * 2 - 1) * DUCK_SPEED;
+    let dx = (Math.random() * 2 - 1) * randomDuck.speed;
+    let dy = (Math.random() * 2 - 1) * randomDuck.speed;
     
     // Evento al disparar
     duck.addEventListener("click", () => {
