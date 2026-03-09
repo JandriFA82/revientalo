@@ -47,7 +47,7 @@ const gameArea = document.getElementById("gameArea");
 const scoreElement = document.getElementById("score");
 
 let score = 0;
-const DUCK_SPEED = 2;
+const DUCK_SPEED = 3;
 let ducksOnScreen = 0;
 const MAX_DUCKS = 3;
 
@@ -73,7 +73,7 @@ const duckTypes = [
         image: "assets/images/duck_gold.png"
     }
 ];
-// Crear un pato azul 
+// Crear un pato 
 function createDuck() {
     if (ducksOnScreen >= MAX_DUCKS) return;
 
@@ -110,6 +110,14 @@ function createDuck() {
     function moveDuck() {
     let x = duck.offsetLeft;
     let y = duck.offsetTop;
+
+    // variación aleatoria de dirección
+    dx += (Math.random() - 0.5) * 0.3;
+    dy += (Math.random() - 0.5) * 0.3;
+
+    // limitar velocidad
+    dx = Math.max(-DUCK_SPEED, Math.min(DUCK_SPEED, dx));
+    dy = Math.max(-DUCK_SPEED, Math.min(DUCK_SPEED, dy));
 
     x += dx;
     y += dy;
