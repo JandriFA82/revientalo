@@ -93,20 +93,47 @@ function createDuck() {
     duck.src = randomDuck.image;
     duck.classList.add("duck");
 
-    // Posición aleatoria dentro del área de juego
-    const maxX = gameArea.clientWidth - 80;
-    const maxY = gameArea.clientHeight - 80;
-
-    duck.style.left = Math.random() * maxX + "px";
-    duck.style.top = Math.random() * maxY + "px";
-
+    gameArea.appendChild(duck);
     ducksOnScreen++;
-    
-    // Movimiento aleatorio
+
+// Posición aleatoria dentro del área de juego
+    const duckSize = 80;
+
+    const maxX = gameArea.clientWidth - duckSize;
+    const maxY = gameArea.clientHeight - duckSize;
+
+// elegir lado aleatorio
+    const side = Math.floor(Math.random() * 4);
+
+    let x, y;
+
+    if (side === 0) { // arriba
+        x = Math.random() * maxX;
+        y = 0;
+    }
+
+    else if (side === 1) { // abajo
+        x = Math.random() * maxX;
+        y = maxY;
+    }
+
+    else if (side === 2) { // izquierda
+        x = 0;
+        y = Math.random() * maxY;
+    }
+
+    else { // derecha
+        x = maxX;
+        y = Math.random() * maxY;
+    }
+
+    duck.style.left = x + "px";
+    duck.style.top = y + "px";
+// Movimiento aleatorio
     let dx = (Math.random() * 2 - 1) * randomDuck.speed;
     let dy = (Math.random() * 2 - 1) * randomDuck.speed;
     
-    // Evento al disparar
+// Evento al disparar
     duck.addEventListener("click", () => {
         score += randomDuck.points;
         scoreElement.textContent = score;
@@ -115,7 +142,7 @@ function createDuck() {
         ducksOnScreen--;
     });
 
-    //movimiento del pato aleatorio
+//movimiento del pato aleatorio
     function moveDuck() {
     let x = duck.offsetLeft;
     let y = duck.offsetTop;
@@ -124,14 +151,14 @@ function createDuck() {
     dx += (Math.random() - 0.5) * 0.3;
     dy += (Math.random() - 0.5) * 0.3;
 
-    // limitar velocidad
-    dx = Math.max(-DUCK_SPEED, Math.min(DUCK_SPEED, dx));
-    dy = Math.max(-DUCK_SPEED, Math.min(DUCK_SPEED, dy));
+// limitar velocidad
+    dx = Math.max(-randomDuck.speed, Math.min(randomDuck.speed, dx));
+    dy = Math.max(-randomDuck.speed, Math.min(randomDuck.speed, dy));
 
     x += dx;
     y += dy;
 
-    // Rebotar en los bordes
+// Rebotar en los bordes
     if (x <= 0 || x >= gameArea.clientWidth - duck.clientWidth) {
         dx *= -1;
     }
@@ -148,7 +175,7 @@ function createDuck() {
 
 moveDuck();
 
-    gameArea.appendChild(duck);
+
 }
 
 // Generador automático de patos
