@@ -13,6 +13,7 @@ body {
     align-items: center;
     background-attachment: fixed;
     cursor: url(assets/images/shotgun.png), auto;
+    overflow-y: hidden;
 }
 .container{
     display: flex;
@@ -95,14 +96,17 @@ button:hover{
     background-repeat: no-repeat;
     border: 2px solid #000000;
     position:relative;
-    display: flex;
-    justify-content: center;
+
+    overflow: hidden;
 }
 
 /* pato */
 .duck {
     position: absolute;
     width: 80px;
+    height: 80px;
     cursor: crosshair;
     user-select: none;
 }
+
+
