@@ -96,6 +96,17 @@ function createDuck() {
     gameArea.appendChild(duck);
     ducksOnScreen++;
 
+    const lifetime = 8000 + Math.random() * 1000;
+
+    duck.timeoutId = setTimeout(() => {
+        if (duck.parentElement) {
+
+            cancelAnimationFrame(duck.movementId); // 🔥 parar movimiento
+
+            duck.remove();
+            ducksOnScreen--;
+        }
+    }, lifetime);
 // Posición aleatoria dentro del área de juego
     const duckSize = 80;
 
@@ -137,7 +148,10 @@ function createDuck() {
     duck.addEventListener("click", () => {
         score += randomDuck.points;
         scoreElement.textContent = score;
+
         cancelAnimationFrame(duck.movementId);
+        clearTimeout(duck.timeoutId); 
+
         duck.remove();
         ducksOnScreen--;
     });
@@ -184,3 +198,4 @@ setInterval(() => {
         createDuck();
     }
 }, 1500);
+
