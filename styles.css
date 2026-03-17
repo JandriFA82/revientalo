@@ -13,6 +13,7 @@ body {
     align-items: center;
     background-attachment: fixed;
     cursor: url(assets/images/shotgun.png), auto;
+    overflow-y: hidden;
 }
 .container{
     display: flex;
