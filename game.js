@@ -101,7 +101,7 @@ function createDuck() {
     duck.timeoutId = setTimeout(() => {
         if (duck.parentElement) {
 
-            cancelAnimationFrame(duck.movementId); // 🔥 parar movimiento
+            cancelAnimationFrame(duck.movementId);
 
             duck.remove();
             ducksOnScreen--;
