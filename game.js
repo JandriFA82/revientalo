@@ -14,6 +14,9 @@ const gameArea = document.getElementById("gameArea");
 const scoreElement = document.getElementById("score");
 const shotsElement = document.getElementById("shots");
 const difficultySelect = document.getElementById("difficulty");
+const gameOverPopup = document.getElementById("gameOverPopup");
+const finalScoreText = document.getElementById("finalScore");
+const btnRestart = document.getElementById("btnRestart");
 
 // Variables
 let score = 0;
@@ -62,15 +65,23 @@ btnMenu.addEventListener("click", () => {
     showScreen(menuScreen);
 });
 
+btnRestart.addEventListener("click", () => {
+    gameOverPopup.classList.add("hidden");
+    showScreen(menuScreen);
+});
+
 // =======================
 // DISPAROS 
 // =======================
 gameArea.addEventListener("click", () => {
     if (shotsLeft <= 0) return;
+
     shotsLeft--;
     shotsElement.textContent = shotsLeft;
 
-    console.log("Disparo:", shotsLeft);
+    if (shotsLeft === 0) {
+        gameOver();
+    }
 });
 
 // =======================
@@ -182,3 +193,13 @@ setInterval(() => {
         createDuck();
     }
 }, 1500);
+
+
+// =======================
+// GAME OVER
+// =======================
+
+function gameOver() {
+    finalScoreText.textContent = "Puntos: " + score;
+    gameOverPopup.classList.remove("hidden");
+}
